@@ -1,9 +1,2 @@
-build_env_vars:
-  ANACONDA_ROCKET_ENABLE_PY313: yes
-
 upload_channels:
   - sfe1ed40
-
-channels:
-  - https://staging.continuum.io/prefect/fs/pnpm-feedstock/pr1/48a27de
-  - https://staging.continuum.io/prefect/fs/pnpm-licenses-feedstock/pr1/9b79f4c
