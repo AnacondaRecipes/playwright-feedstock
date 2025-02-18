@@ -11,16 +11,14 @@ source:
 
 build:
   number: 0
-  skip: true  # [win]
+  # nodejs is not avaliable on linux-s390x
+  skip: True  # [s390x]
 
 requirements:
   build:
     - nodejs
   host:
-    - yarn <2
     - nodejs
-    - pnpm
-    - pnpm-licenses
   run:
     - nodejs
 
