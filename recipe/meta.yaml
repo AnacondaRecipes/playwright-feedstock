@@ -11,23 +11,22 @@ source:
 
 build:
   number: 0
-  skip: true  # [win]
+  # nodejs is not avaliable on linux-s390x
+  skip: True  # [s390x]
 
 requirements:
   build:
-    - nodejs
+    # https://playwright.dev/docs/intro#system-requirements
+    - nodejs >=18
   host:
-    - yarn <2
-    - nodejs
-    - pnpm
-    - pnpm-licenses
+    - nodejs >=18
   run:
-    - nodejs
+    - nodejs >=18
 
 test:
   commands:
     - npm list -g playwright
-    - npx playwright --version
+    - playwright --version
 
 about:
   home: https://playwright.dev
@@ -36,6 +35,7 @@ about:
     Playwright is a framework for Web Testing and Automation. It allows
     testing Chromium, Firefox and WebKit with a single API.
   license: Apache-2.0
+  license_family: Apache
   license_file: LICENSE
   doc_url: https://playwright.dev/docs/
   dev_url: https://github.com/microsoft/playwright
@@ -43,3 +43,6 @@ about:
 extra:
   recipe-maintainers:
     - jan-janssen
+  skip-lints:
+    - invalid_url
+    - host_section_needs_exact_pinnings
